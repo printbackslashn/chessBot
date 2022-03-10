@@ -25,7 +25,7 @@ turn = 'player'
 
 while game:
   if turn == 'player':
-    #replit in replit
+
     command = str(take_input())
     if command == 'help()':
       print('bro its chess')
@@ -38,7 +38,7 @@ while game:
       'replit process died due to getting forked between its cpu and ram',
       'replit process died due to the player getting their pawn to the end',
       'replit process died due to alex saying it blundered',
-      'replit process died due to missing a checkmate in 25',
+      'replit process died due to missing a checkmate in 245',
       'replit process died due to being more sus than a character from among us',
       'replit process died due to death',
       'replit process died due to having 1 core, 1 gb of ram, and 1 gb of storage',
@@ -47,6 +47,7 @@ while game:
       ]
       print(Fore.RED+messages[rngSUS])
       game = False
+      
     else:
       if len(command) == 4:
         a = command[0]
