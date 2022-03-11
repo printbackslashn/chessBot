@@ -77,8 +77,8 @@ class blankPiece():
 
   def __init__(self):
     self.canMove = False
-  def canMove(self, x, y, z): # X y and z because it doesn't need those variables
-    return self.canMove
+  def canMove(self, x, y): # X y and z because it doesn't need those variables
+    return False
   def name():
       return " "
 class king():
@@ -205,6 +205,7 @@ class pawn():
             return True 
       elif (piece[0] + 1 == location[0] or piece[0] - 1 == location[0]) and (piece[1] + colorChange == location[1]):
         # Pawn attack
+        if 
         print("Pawn attack")
         return True
     
