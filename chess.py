@@ -74,7 +74,7 @@ class board():
     self.pieces[-2] = pawn.pawnRow("white")
 class blankPiece():
   canMove = False
-
+  color = "blank"
   def __init__(self):
     self.canMove = False
   def canMove(self, x, y): # X y and z because it doesn't need those variables
@@ -92,6 +92,9 @@ class king():
       res = Fore.RED + "K"
     return res
   def canMove(self, pieces, piece, location): # self: Self, pieces: Array of pieces, piece: [column, row], location: [column, row]
+    if pieces[location[0]][location[1]].color == self.color:
+      
+      return False
     if piece == location:
       return False
     elif piece[0] == location[0]:
@@ -190,8 +193,9 @@ class pawn():
             return True
       elif (piece[0] + 1 == location[0] or piece[0] - 1 == location[0]) and (piece[1] + colorChange == location[1]):
         # Pawn attack
-        print("Pawn attack")
-        return True
+        if pieces[location[0]][location[1]].color != "blank":
+          print("Pawn attack")
+          return True
     else:
       print("AYyO")
       print(f"Piece is {piece} and location is {location}")
@@ -205,8 +209,8 @@ class pawn():
             return True 
       elif (piece[0] + 1 == location[0] or piece[0] - 1 == location[0]) and (piece[1] + colorChange == location[1]):
         # Pawn attack
-        if 
-        print("Pawn attack")
-        return True
-    
+        if pieces[location[0]][location[1]].color != "blank":
+          print("Pawn attack")
+          return True
+    #fine
     return False

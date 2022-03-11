@@ -6,10 +6,10 @@ board = chess.board()
 board.show()
 
 def printhelp():
-  print('sussus amongus')
+  print('''https://en.wikipedia.org/wiki/Chess''')
 def take_input(msg = ''):
   print(msg)
-  print(Fore.BLUE+' ',end='')
+  print(Fore.YELLOW+' ',end='')
   print(Fore.WHITE,end='')
   return(input())
   
