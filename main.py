@@ -54,7 +54,9 @@ while game:
         x = str(command[1])
         b = command[2]
         y = str(command[3])
-        board.move(a+x,b+y)
+        if a.lower() in "abcdefgh" and x in "12345678":
+          if b.lower() in "abcdefgh" and y in "12345678":
+            board.move(a+x,b+y)
         replit.clear()
         board.show()
       else:

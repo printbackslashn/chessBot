@@ -77,7 +77,7 @@ class blankPiece():
 
   def __init__(self):
     self.canMove = False
-  def canMove(self, location):
+  def canMove(self, x, y, z): # X y and z because it doesn't need those variables
     return self.canMove
   def name():
       return " "
@@ -91,6 +91,25 @@ class king():
     else:
       res = Fore.RED + "K"
     return res
+  def canMove(self, pieces, piece, location): # self: Self, pieces: Array of pieces, piece: [column, row], location: [column, row]
+    if piece == location:
+      return False
+    elif piece[0] == location[0]:
+      if piece[1] == location[1] + 1:
+        return True
+      elif piece[1] == location[1] - 1:
+        return True
+      else:
+        return False
+    elif piece[1] == location[1]:
+      if piece[0] == location[0] + 1:
+        return True
+      elif piece[0] == location[0] - 1:
+        return True
+      else:
+        return False
+    else:
+      return False
 class queen():
   color = ""
   def __init__(self, color):
