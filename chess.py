@@ -42,7 +42,8 @@ class board():
 
   def __init__(self):
     # How some of the methods work they require a class with the method name, and there is no string.name()
-    
+
+    #good god mark what the f you learned loops
     self.pieces = [[blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
@@ -51,7 +52,8 @@ class board():
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece]]
-    
+
+    #set up board
     self.pieces[1] = pawn.pawnRow("black")
     self.pieces[0][0] = rook("black")
     self.pieces[0][1] = knight("black")
@@ -72,7 +74,8 @@ class board():
     self.pieces[-1][6] = knight("white")
     self.pieces[-1][7] = rook("white")
     self.pieces[-2] = pawn.pawnRow("white")
-class blankPiece():
+    
+class blankPiece():#empty tile
   canMove = False
   color = "blank"
   def __init__(self):
@@ -81,6 +84,7 @@ class blankPiece():
     return False
   def name():
       return " "
+    
 class king():
   color = ""
   def __init__(self, color):
@@ -93,12 +97,14 @@ class king():
     return res
   def canMove(self, pieces, piece, location): # self: Self, pieces: Array of pieces, piece: [column, row], location: [column, row]
     if pieces[location[0]][location[1]].color == self.color:
-      
+      #if own piece dont capture
       return False
     if piece == location:
+      #cant move to where it already is?
       return False
     elif piece[0] == location[0]:
       if piece[1] == location[1] + 1:
+        #
         return True
       elif piece[1] == location[1] - 1:
         return True
@@ -113,6 +119,7 @@ class king():
         return False
     else:
       return False
+      
 class queen():
   color = ""
   def __init__(self, color):
@@ -123,6 +130,7 @@ class queen():
     else:
       res = Fore.RED + "Q"
     return res
+    
 class bishop():
   color = ""
   def __init__(self, color):
@@ -133,6 +141,7 @@ class bishop():
     else:
       res = Fore.RED + "B"
     return res
+    
 class knight():
   color = ""
   def __init__(self, color):
@@ -143,6 +152,7 @@ class knight():
     else:
       res = Fore.RED + "N"
     return res
+    
 class rook():
   color = ""
   def __init__(self, color):
@@ -153,6 +163,9 @@ class rook():
     else:
       res = Fore.RED + "R"
     return res
+  def canMove(self, pieces, piece, location): # self: Self, pieces: Array of pieces, piece: [column, row], location: [column, row]
+    
+    return True
 class pawn():
   color = "white"
   firstMove = False
@@ -193,6 +206,7 @@ class pawn():
             return True
       elif (piece[0] + 1 == location[0] or piece[0] - 1 == location[0]) and (piece[1] + colorChange == location[1]):
         # Pawn attack
+        #return True
         if pieces[location[0]][location[1]].color != "blank":
           print("Pawn attack")
           return True
