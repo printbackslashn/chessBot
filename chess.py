@@ -43,7 +43,7 @@ class board():
   def __init__(self):
     # How some of the methods work they require a class with the method name, and there is no string.name()
 
-    #good god mark what the f you learned loops
+    #good god mark what the f you learned loops # lmao it was weird because it doesn't like when I do loops, so i copied and pasted
     self.pieces = [[blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],
     [blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece, blankPiece],

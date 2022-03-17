@@ -2,6 +2,9 @@ import chess
 import replit
 from colorama import Fore
 from random import randint
+
+import amongus
+
 board = chess.board()
 board.show()
 
@@ -47,6 +50,9 @@ def player_input():
 
   if command == 'reload':
     reload()
+
+  if command == 'sus':
+    amongus.imposter()
     
   #making moves  
   else:
