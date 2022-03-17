@@ -65,7 +65,10 @@ def player_input():
     y = str(command[3])
     if a.lower() in "abcdefgh" and x in "12345678":
       if b.lower() in "abcdefgh" and y in "12345678":
-        board.move(a+x,b+y)
+        moveRes = board.move(a+x,b+y)
+        print(moveRes)
+        if not(moveRes):
+          turn -= 1
         turn+=1
         if turn == 2:
           turn=0

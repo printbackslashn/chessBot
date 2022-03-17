@@ -12,6 +12,8 @@ def algebraic(piece):
 class board():
   #https://qwerty.dev/chess-symbols-to-copy-and-paste/
   pieces = []
+  def list(self):
+    return self.pieces
   def show(self):
     res = ""
     # Use chess algebraic coordinate system here
@@ -37,7 +39,9 @@ class board():
       target = location
       self.pieces[target[1]][target[0]] = self.pieces[piece[1]][piece[0]]
       self.pieces[piece[1]][piece[0]] = blankPiece
-    
+      return True
+    else:
+      return False
       
     
 
