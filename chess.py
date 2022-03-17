@@ -13,9 +13,10 @@ class board():
   #https://qwerty.dev/chess-symbols-to-copy-and-paste/
   pieces = []
   def show(self):
-    
+    res = ""
     # Use chess algebraic coordinate system here
     print("♟    A B C D E F G H  ♟")
+    
     print("   ╔═════════════════╗   ")
     for i in range(len(self.pieces)):
         print(8-i, end=" ")
@@ -164,8 +165,13 @@ class rook():
       res = Fore.RED + "R"
     return res
   def canMove(self, pieces, piece, location): # self: Self, pieces: Array of pieces, piece: [column, row], location: [column, row]
-    
-    return True
+    if piece == location:
+      return False
+    elif piece[0] == location[0]:   
+      return True
+    elif piece[1] == location[1]:
+      return True
+    return False
 class pawn():
   color = "white"
   firstMove = False
