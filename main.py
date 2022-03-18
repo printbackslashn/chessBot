@@ -1,24 +1,22 @@
 import chess
-import replit
+
 from colorama import Fore
 from random import randint
-
-import amongus
 
 board = chess.board()
 board.show()
 
 messages = [
-      'replit process died due to no pawn structure:',
-      'replit process died due to getting forked between its cpu and ram',
-      'replit process died due to the player getting their pawn to the end',
-      'replit process died due to alex saying it blundered',
-      'replit process died due to missing a checkmate in 245',
-      'replit process died due to being more sus than a character from among us',
-      'replit process died due to death',
-      'replit process died due to having 1 core, 1 gb of ram, and 1 gb of storage',
-      'replit process died due to not knowing algebraic notation',
-      'replit process died due to having a B in PLTW'
+      'process died due to no pawn structure:',
+      'process died due to getting forked between its cpu and ram',
+      'process died due to the player getting their pawn to the end',
+      'process died due to alex saying it blundered',
+      'process died due to missing a checkmate in 245',
+      'process died due to being more sus than a character from among us',
+      'process died due to death',
+      'process died due to having 1 core, 1 gb of ram, and 1 gb of storage',
+      'process died due to not knowing algebraic notation',
+      'process died due to having a B in PLTW'
       ]
 
 def printhelp():
@@ -35,7 +33,7 @@ def computer_input():
   return
 
 def reload():
-  replit.clear()
+  print('\033c')
   board.show()
 
 def player_input():
@@ -50,9 +48,6 @@ def player_input():
 
   if command == 'reload':
     reload()
-
-  if command == 'sus':
-    amongus.imposter()
     
   #making moves  
   else:
