@@ -174,12 +174,12 @@ class rook():
     elif piece[0] == location[0]:   
       if location[1] > piece[1]:
         for i in range(location[1]-piece[1]):
-          if pieces[piece[0]][piece[1]+i].name() != "blank":
+          if pieces[piece[0]][piece[1]+1+i].name() != " ":
             print("lmao")
             return False
       else:
         for i in range(piece[1]-location[1]):
-          if pieces[piece[0]][piece[1]-i].name() != "blank":
+          if pieces[piece[0]][piece[1]-1-i].name() != " ":
             return False
       return True
     elif piece[1] == location[1]:
